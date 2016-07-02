@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/LanguageTool'
+Plugin 'vim-scripts/bash-support.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,15 +49,27 @@ let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 syntax on
 set number
 " set relativenumber
+
 " Use the OS clipboard by default
 set clipboard=unnamed
+
 set textwidth=100
 
+" [indent](http://stackoverflow.com/a/234578/1833118)
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" show existing tab with 4 spaces width
+set tabstop=4
+" On pressing tab, insert 4 spaces
+" set expandtab
+
+" spell checking
 setlocal spell
 
 " set background=dark
 
 set guifont=Ubuntu\ Mono\ 15
+
 " incremental and highlight search
 set incsearch
 set hlsearch
@@ -65,9 +78,17 @@ set showmode
 set title
 set showcmd
 
-" for LanguageTool Plugin
-let g:languagetool_jar="~/SoftwareService/LanguageTool-3.3/languagetool-commandline.jar"
-
 " Don’t add empty newlines at the end of files
 set binary
 set noeol
+
+
+" #################### Plugin Configurations #################### 
+" for LanguageTool Plugin
+let g:languagetool_jar="~/SoftwareService/LanguageTool-3.3/languagetool-commandline.jar"
+
+" for bash-support Plugin
+let g:BASH_AuthorName   = 'hengxin'
+let g:BASH_Email        = 'hengxin0912@gmail.com'
+let g:BASH_Company      = 'ICS@NJU'
+" ################### Plugin Configurations ##################### 
