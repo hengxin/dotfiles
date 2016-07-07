@@ -1,0 +1,26 @@
+[user]
+	email = hengxin0912@gmail.com
+	name = hengxin
+[credential]
+	helper = cache --timeout=3600000
+[http]
+	postBuffer = 524288000
+[alias]
+    s = status -sb
+    st = status
+  	a = add -A
+    cm = commit -m
+	b = checkout -b 
+    co = checkout
+    l = log --all --graph --decorate --oneline --abbrev-commit
+[push]
+	default = current
+[color]
+    ui = 1
+[diff]
+    algorithm = patience
+    compactionHeuristic = true # better diffs (since 2.9)
+[submodule]
+    fetchJobs = 3 # parallel cloning, updating, fetching of submodules (sice 2.9)
+
+# ref: https://github.com/SKoschnicke/dotfiles/blob/master/gitconfig
