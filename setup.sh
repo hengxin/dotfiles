@@ -19,7 +19,8 @@
 
 set -o nounset                              # Treat unset variables as an error
 
-git clone 
+# clone into your home directory (TODO: provide an argument)
+git clone https://github.com/hengxin/dotfiles.git ~/dotfiles
 
 ln -sv ~/dotfiles/vim/vim/ ~/.vim
 ln -sv ~/dotfiles/vim/vimrc ~/.vimrc
