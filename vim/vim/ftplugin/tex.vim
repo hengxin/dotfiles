@@ -9,9 +9,9 @@ set sw=2
 set iskeyword+=:
 
 :let g:Tex_PromptedEnvironments =
-    \'frame,itemize,enumerate,description,'.
+    \'document,frame,itemize,enumerate,description,'.
 	\'eqnarray*,eqnarray,equation,equation*,align,align*,'.
-    \'columns'
+    \'columns,tikzpicture'
 
 :let g:Tex_IgnoredWarnings =
 	\'Underfull'."\n".
