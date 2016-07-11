@@ -85,6 +85,20 @@ set showcmd
 set binary
 set noeol
 
+" ########## placeholders ########## 
+" ##### See http://vim.wikia.com/wiki/Simple_placeholders #####
+" A syntax for placeholders
+" Pressing Control-j jumps to the next match.
+inoremap <c-j> <Esc>/<++><CR><Esc>cf>
+
+" Completions using placeholders
+inoremap ( ()<++><Esc>F)i
+inoremap [ []<++><Esc>F]i
+inoremap { {}<++><Esc>F}i
+inoremap < <><++><Esc>F>i
+inoremap ' ''<++><Esc>F'i
+inoremap " ""<++><Esc>F"i
+" ########## placeholders ########## 
 
 " #################### Plugin Configurations #################### 
 " for LanguageTool Plugin
