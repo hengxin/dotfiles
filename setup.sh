@@ -26,3 +26,4 @@ ln -sv ~/dotfiles/vim/vim/ ~/.vim
 ln -sv ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sv ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -sv ~/dotfiles/bash/bash_aliases ~/.bash_aliases
