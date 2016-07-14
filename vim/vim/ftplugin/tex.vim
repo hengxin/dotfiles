@@ -9,7 +9,7 @@ set sw=2
 set iskeyword+=:
 
 :let g:Tex_PromptedEnvironments =
-    \'document,frame,itemize,enumerate,description,'.
+    \'frame,itemize,enumerate,description,'.
 	\'eqnarray*,eqnarray,equation,equation*,align,align*,'.
     \'columns,tikzpicture'
 
@@ -20,10 +20,13 @@ set iskeyword+=:
 	\'You have requested'."\n".
 	\'Missing number, treated as zero.'."\n".
 	\'Font'."\n".
+    \'Unused global option'."\n".
 	\'There were undefined references'."\n".
 	\'Citation %.%# undefined'
 
-" the 'ignore level' of the 'efm'. A value of 4 says that the first 4 kinds of
-" warnings in the list above will be ignored. Use the command TCLevel to set a
-" level dynamically.
-:let g:Tex_IgnoreLevel = 6
+" the 'ignore level' of the 'efm'. 
+" For example, a value of 4 says that the first 4 kinds of warnings in the list above 
+" will be ignored. 
+" Use the command TCLevel to set a level dynamically.
+" Use the command TCLevel strict to produce all LaTeX warnings.
+:let g:Tex_IgnoreLevel = 9
