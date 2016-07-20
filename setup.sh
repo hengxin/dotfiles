@@ -27,3 +27,10 @@ ln -sv ~/dotfiles/vim/vimrc ~/.vimrc
 ln -sv ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -sv ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 ln -sv ~/dotfiles/bash/bash_aliases ~/.bash_aliases
+
+##### tmux
+
+# [tmux-resurrect plugin](https://github.com/tmux-plugins/tmux-resurrect)
+git clone https://github.com/tmux-plugins/tmux-resurrect ~/dotfiles/tmux/
+
+tmux source-file ~/.tmux.conf
