@@ -24,3 +24,7 @@
     fetchJobs = 3 # parallel cloning, updating, fetching of submodules (sice 2.9)
 
 # ref: https://github.com/SKoschnicke/dotfiles/blob/master/gitconfig
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true

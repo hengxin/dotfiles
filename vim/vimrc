@@ -12,6 +12,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/LanguageTool'
 Plugin 'vim-scripts/bash-support.vim'
+Plugin 'wincent/command-t'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,7 +53,7 @@ map <f2> :w<cr><leader>ll
 
 syntax on
 set number
-" set relativenumber
+set relativenumber
 
 " Use the OS clipboard by default
 set clipboard=unnamed
@@ -67,6 +69,8 @@ set tabstop=4
 " set expandtab
 
 " spell checking
+"ignore East Asian characters including Chinese; see http://unix.stackexchange.com/a/192835
+set spelllang+=cjk  
 setlocal spell
 
 " set background=dark
@@ -85,27 +89,69 @@ set showcmd
 set binary
 set noeol
 
+" #################### for netrw: the explorer mode ####################
+let mapleader=" "
+map <leader>e :Explore<cr> 
+map <leader>t :Texplore<cr>
+map <leader>v :Vexplore<cr>
+let g:netrw_liststyle=3
+" #################### for netrw: the explorer mode ####################
+
+
 " ########## placeholders ########## 
 " ##### See http://vim.wikia.com/wiki/Simple_placeholders #####
 " A syntax for placeholders
 " Pressing Control-j jumps to the next match.
-inoremap <c-j> <Esc>/<++><CR><Esc>cf>
+" inoremap <c-j> <Esc>/<++><CR><Esc>cf>
 
 " Completions using placeholders
-inoremap ( ()<++><Esc>F)i
-inoremap [ []<++><Esc>F]i
-inoremap { {}<++><Esc>F}i
-inoremap < <><++><Esc>F>i
-inoremap ' ''<++><Esc>F'i
-inoremap " ""<++><Esc>F"i
+" inoremap ) ()<++><Esc>F)i
+" inoremap ] []<++><Esc>F]i
+" inoremap } {}<++><Esc>F}i
+" inoremap > <><++><Esc>F>i
+" inoremap ' ''<++><Esc>F'i
 " ########## placeholders ########## 
 
 " #################### Plugin Configurations #################### 
+
 " for LanguageTool Plugin
 let g:languagetool_jar="~/SoftwareService/LanguageTool-3.3/languagetool-commandline.jar"
 
-" for bash-support Plugin
+" ########## for bash-support Plugin ##########
 let g:BASH_AuthorName   = 'hengxin'
 let g:BASH_Email        = 'hengxin0912@gmail.com'
 let g:BASH_Company      = 'ICS@NJU'
+" ########## for bash-support Plugin ##########
+
+" ########## for easymotion Plugin ########## 
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap d <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" ########## for easymotion Plugin ########## 
+
 " ################### Plugin Configurations ##################### 
+
+" #################### Abbreviations #################### 
+iab c10% %%%%%%%%%%
+iab c20% %%%%%%%%%%%%%%%%%%%%
+iab c40% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+iab c10# ##########
+iab c20# ####################
+iab c40# ########################################
+
+iab cfig %%%%%%%%%% fig:<++> %%%%%%%%%%
+iab ctbl %%%%%%%%%% tbl:<++> %%%%%%%%%%
+" #################### Abbreviations #################### 
