@@ -1,6 +1,6 @@
 " NOTE: Source this file from within Vim to enable the settings below.
 
-" this is mostly a matter of taste. but LaTeX looks good with just a bit
+" this is mostly a matter of taste; but LaTeX looks good with just a bit
 " of indentation.
 set sw=2
 " TIP: if you write your \label's as \label{fig:something}, then if you

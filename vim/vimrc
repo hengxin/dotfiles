@@ -10,10 +10,18 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'tpope/vim-surround'
-Plugin 'vim-scripts/LanguageTool'
+Plugin 'vim-scripts/LanguageTool'				" spell/syntax checking
 Plugin 'vim-scripts/bash-support.vim'
 Plugin 'wincent/command-t'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'Valloric/YouCompleteMe'  				" auto-completion
+Plugin 'tpope/vim-fugitive' 					" a git wrapper
+Plugin 'altercation/vim-colors-solarized'  		" color theme
+Plugin 'vim-airline/vim-airline'				" vim status line
+Plugin 'vim-airline/vim-airline-themes'			" color theme for vim status line
+" Plugin 'Townk/vim-autoclose'
+Plugin 'xolox/vim-misc'							" auto-load vim script (required by xolox/vim-session)
+Plugin 'xolox/vim-session'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -73,6 +81,10 @@ set tabstop=4
 set spelllang+=cjk  
 setlocal spell
 
+" hide UI elements from GVIM
+set guioptions-=m  "menu bar
+set guioptions-=T  "toolbar
+set guioptions-=r  "scrollbar
 " set background=dark
 
 set guifont=Ubuntu\ Mono\ 15
@@ -80,7 +92,13 @@ set guifont=Ubuntu\ Mono\ 15
 " incremental and highlight search
 set incsearch
 set hlsearch
+set iskeyword+=-
+set iskeyword+=@
+set iskeyword+=:
+set ignorecase
+set smartcase
 
+" statusline
 set showmode
 set title
 set showcmd
@@ -91,9 +109,16 @@ set noeol
 
 " #################### for netrw: the explorer mode ####################
 let mapleader=" "
-map <leader>e :Explore<cr> 
-map <leader>t :Texplore<cr>
-map <leader>v :Vexplore<cr>
+" enter the explorer mode
+nnoremap <leader>e :Explore<cr> 
+" enter the explorer mode in a new tab
+nnoremap <leader>t :Texplore<cr>
+" enter the explorer mode in a vertical split
+nnoremap <leader>v :Vexplore<cr>
+" enter the explorer mode in a horizontal split
+nnoremap <leader>h :Hexplore<cr>
+" return to explorer mode
+nnoremap <leader>r :Rexplore<cr>
 let g:netrw_liststyle=3
 " #################### for netrw: the explorer mode ####################
 
@@ -113,6 +138,8 @@ let g:netrw_liststyle=3
 " ########## placeholders ########## 
 
 " #################### Plugin Configurations #################### 
+" for matchit Plugin
+runtime macros/matchit.vim
 
 " for LanguageTool Plugin
 let g:languagetool_jar="~/SoftwareService/LanguageTool-3.3/languagetool-commandline.jar"
@@ -125,32 +152,64 @@ let g:BASH_Company      = 'ICS@NJU'
 
 " ########## for easymotion Plugin ########## 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap d <Plug>(easymotion-overwin-f2)
+" `<Leader>f{char}` move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
 
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
+" `<Leader>w{char}`: move to word
+map <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" `s{char}{char}{label}`: move to {char}{char}
+map <Leader>s <Plug>(easymotion-overwin-f2)
 
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Gif config
+map <Leader>/ <Plug>(easymotion-sn)
+omap <Leader>/ <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+
+" I don't use these `n` and `N` mappings because they don't behavor well.
+" map n <Plug>(easymotion-next)
+" map N <Plug>(easymotion-prev)
 " ########## for easymotion Plugin ########## 
 
-" ################### Plugin Configurations ##################### 
+" ########## for altercation/vim-colors-solarized Plugin ##########
+syntax enable
+set background=light
+colorscheme solarized
+" ########## for altercation/vim-colors-solarized Plugin ##########
 
+" ########## for vim-airline/vim-airline Plugin ########## 
+let g:airline#extensions#tabline#enabled = 1
+
+" ########## for xolox/vim-session Plugin ##########
+
+" ################### Plugin Configurations ##################### 
+ 
 " #################### Abbreviations #################### 
-iab c10% %%%%%%%%%%
-iab c20% %%%%%%%%%%%%%%%%%%%%
-iab c40% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-iab c10# ##########
-iab c20# ####################
-iab c40# ########################################
+iab c1 %%%%%%%%%%
+iab c2 %%%%%%%%%%%%%%%%%%%%
+iab c4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+iab c6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+iab cs1 ##########
+iab cs2 ####################
+iab cs4 ########################################
+iab cs6 ############################################################
+
+iab c1c %%%%%%%%%% <++> %%%%%%%%%%
+iab c2c %%%%%%%%%%%%%%%%%%%% <++> %%%%%%%%%%%%%%%%%%%%
 
 iab cfig %%%%%%%%%% fig:<++> %%%%%%%%%%
 iab ctbl %%%%%%%%%% tbl:<++> %%%%%%%%%%
