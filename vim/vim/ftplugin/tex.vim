@@ -23,6 +23,7 @@ set iskeyword+=:
     \'Unused global option'."\n".
 	\'There were undefined references'."\n".
     \'LaTeX Warning: Reference'."\n".
+    \'contains only floats'."\n".
     \'LaTeX Warning: Marginpar'."\n".
     \'textsuperscript invalid'."\n".
 	\'Citation %.%# undefined'
@@ -32,4 +33,4 @@ set iskeyword+=:
 " will be ignored. 
 " Use the command TCLevel to set a level dynamically.
 " Use the command TCLevel strict to produce all LaTeX warnings.
-:let g:Tex_IgnoreLevel = 11
+:let g:Tex_IgnoreLevel = 12

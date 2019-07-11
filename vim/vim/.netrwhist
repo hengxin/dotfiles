@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/phd-thesis/chapters'
-let g:netrw_dirhist_2='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/phd-thesis'
-let g:netrw_dirhist_3='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/phd-thesis/chapters'
-let g:netrw_dirhist_4='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/phd-thesis'
-let g:netrw_dirhist_5='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/phd-thesis/chapters'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/rvsi-paper/sections'
+let g:netrw_dirhist_2='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/rvsi-paper'
+let g:netrw_dirhist_3='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/rvsi-paper/sections'
+let g:netrw_dirhist_4='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/rvsi-paper'
+let g:netrw_dirhist_5='/home/hengxin/git-projects/bitbucket-projects/personal-research/papers/rvsi-paper/sections'
+let g:netrw_dirhist_6='/home/hengxin/git-projects/github-projects/latex-templates/homework-latex-template'

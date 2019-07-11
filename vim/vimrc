@@ -48,12 +48,15 @@ filetype indent on
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 " let g:tex_flavor='latex' (I (hengxin) changed it to 'xelatex')
+let g:Tex_BibtexFlavor = 'bibtex'
 let g:tex_flavor='xelatex'
 let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode -file-line-error-style $*'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_FormatDependency_pdf = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
+" The following is relevant to make LaTeX rerun after biber if necessary: 
+" (include all formats for which re-running is to be enabled)
+let g:Tex_MultipleCompileFormats='pdf,dvi'
+" let g:Tex_ViewRule_pdf =  'SumatraPDF -reuse-instance '
 
 " F2: autosave before compiling
 map <f2> :w<cr><leader>ll
@@ -207,9 +210,6 @@ iab cs1 ##########
 iab cs2 ####################
 iab cs4 ########################################
 iab cs6 ############################################################
-
-iab c1c %%%%%%%%%% <++> %%%%%%%%%%
-iab c2c %%%%%%%%%%%%%%%%%%%% <++> %%%%%%%%%%%%%%%%%%%%
 
 iab cfig %%%%%%%%%% fig:<++> %%%%%%%%%%
 iab ctbl %%%%%%%%%% tbl:<++> %%%%%%%%%%

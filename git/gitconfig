@@ -2,9 +2,9 @@
 	email = hengxin0912@gmail.com
 	name = hengxin
 [credential]
-	helper = cache --timeout=3600000
+	helper = cache --timeout=36000000
 [http]
-	postBuffer = 524288000
+	postBuffer = 1024M
 [alias]
     s = status -sb
     st = status
@@ -13,6 +13,7 @@
 	b = checkout -b 
     co = checkout
     l = log --all --graph --decorate --oneline --abbrev-commit
+	ign = !git ls-files -ci --exclude-standard -z | xargs -0r git rm --cached	# applying .gitignore
 [push]
 	default = current
 [color]
@@ -28,3 +29,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	required = true
+[core]
+    quotepath = false

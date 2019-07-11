@@ -1,0 +1,23 @@
+pane	aliyun	0	:bash	1	:*	0	:/home/hengxin/git-projects/github-projects/aliyun-projects/aliyun-ecs-projects/aliyun-ecs-ping-project/aliyun-ping-raw-data/ec1	0	bash	:
+pane	aliyun	0	:bash	1	:*	1	:/home/hengxin	0	bash	:
+pane	aliyun	0	:bash	1	:*	2	:/home/hengxin/git-projects/github-projects/aliyun-ping-traces	1	bash	:
+pane	cheat-sheets	0	:bash	1	:*	0	:/home/hengxin/git-projects/github-projects/cheat-sheets/linux-cheat-sheets	0	bash	:
+pane	cheat-sheets	0	:bash	1	:*	1	:/home/hengxin/git-projects/github-projects/cheat-sheets/latex-cheat-sheets	1	bash	:
+pane	dotfiles	0	:bash	1	:*	0	:/home/hengxin/dotfiles/tmux	0	bash	:
+pane	dotfiles	0	:bash	1	:*	1	:/home/hengxin/dotfiles/tmux/tmux-resurrect	1	bash	:
+pane	phd-report	0	:bash	1	:*	0	:/home/hengxin/latex-projects/phd-defense-report-2016	0	bash	:
+pane	phd-report	0	:bash	1	:*	1	:/home/hengxin/latex-projects/phd-defense-report-2016/figures	0	bash	:
+pane	phd-report	0	:bash	1	:*	2	:/home/hengxin/latex-projects/report-data-consistency	0	bash	:
+pane	phd-report	0	:bash	1	:*	3	:/home/hengxin/tikz-projects/phd-defense-report-2016	1	bash	:
+pane	phd-thesis	0	:bash	1	:*	0	:/home/hengxin/git-projects/bitbucket-projects/phd-thesis	0	bash	:
+pane	phd-thesis	0	:bash	1	:*	1	:/home/hengxin/git-projects/bitbucket-projects/phd-thesis	1	bash	:
+pane	research	0	:bash	1	:*	0	:/home/hengxin/git-projects/github-projects/research-resources/my-research	1	bash	:
+pane	tmux	0	:bash	1	:*	0	:/home/hengxin	1	bash	:
+window	aliyun	0	1	:*	acf6,211x51,0,0{105x51,0,0[105x25,0,0,13,105x25,0,26,15],105x51,106,0,14}
+window	cheat-sheets	0	1	:*	ce8d,211x51,0,0{104x51,0,0,1,106x51,105,0,2}
+window	dotfiles	0	1	:*	ce90,211x51,0,0{104x51,0,0,3,106x51,105,0,4}
+window	phd-report	0	1	:*	c1ec,211x51,0,0{104x51,0,0[104x25,0,0,5,104x25,0,26,16],106x51,105,0[106x25,105,0,6,106x25,105,26,17]}
+window	phd-thesis	0	1	:*	4e98,211x51,0,0{104x51,0,0,8,106x51,105,0,9}
+window	research	0	1	:*	58df,211x51,0,0,10
+window	tmux	0	1	:*	ae9d,79x22,0,0,0
+state	phd-report	
